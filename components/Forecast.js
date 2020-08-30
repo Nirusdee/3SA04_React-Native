@@ -1,8 +1,37 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, ImageBackground } from 'react-native'
+
 
 export default function Forecast(props) {
-    return (
+   
+  let img = ""
+    if(props.main == 'Rain'){
+        img = require('../rain.jpg')
+    }
+    if(props.main == 'Sunny'){
+        img = require('../sunny.jpg')
+    }
+    if(props.main == 'Thunderstorm'){
+        img = require('../thunder.jpg')
+    }
+    if(props.main == 'Clouds'){
+        img = require('../cloudy.jpg')
+    }
+    if(props.main == 'Drizzle'){
+        img = require('../drizzle.jpg')
+    }
+    if(props.main == 'Haze'){ 
+        img = require('../drizzle.jpg')
+    }
+    if(props.main == 'Haze'){
+        img = require('../drizzle.jpg')
+    }
+    if(props.main == 'Mist'){
+        img = require('../mist.jpg')
+    }
+  
+  return (
+      <ImageBackground source={img} style={styles.backdrop}>
       <View>
         <Text style={styles.mainText}>{props.main}</Text>
             <Text style={styles.description}>{props.description}</Text>
@@ -23,15 +52,24 @@ export default function Forecast(props) {
                 
             </View>
       </View>
+      </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create({
+  backdrop: {
+    width: '100%',
+    height: '100%',
+    opacity: 0.7,
+    backgroundColor : 'black',
+    borderRadius: 10,
+},
   mainText: {
       fontSize : 40,
       textAlign: 'center',
       paddingTop: 20,
       paddingBottom: 10,
+      fontWeight: 'bold',
       color: 'black'
   },
   description: {
@@ -39,6 +77,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       paddingTop: 10,
       paddingBottom: 30,
+      fontWeight: 'bold',
       color: 'black'
   },
   temp: {
@@ -48,18 +87,23 @@ const styles = StyleSheet.create({
   num: {
       fontSize : 40, 
       color: 'black',
+      fontWeight: 'bold'
   },
   unit: {
       fontSize : 22,  
       color: 'black',  
-      textAlignVertical: 'center'     
+      textAlignVertical: 'center',
+      fontWeight: 'bold'
   },
   subText: {
       fontSize : 20, 
+      fontWeight: 'bold',
       color: 'black'
   },
   text: {
       flexDirection: 'row',
-      justifyContent: 'space-around'
+      justifyContent: 'space-around',
+      paddingTop : 20,
+      paddingBottom : 20
   }
 });

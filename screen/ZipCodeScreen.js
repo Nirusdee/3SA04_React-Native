@@ -14,8 +14,9 @@ const availableZipItems = [
            { place: 'Chonburi', code: '20000', background : require('../chonburi.jpg')},
    ]
    
+
    const ZipItem = ({place, code, navigation, background}) => (
-      <TouchableHighlight onPress={() => {
+      <TouchableHighlight underlayColor='#669999' onPress={() => {
           navigation.navigate('Weather', {zipCode: code})
     }}>
          <View style={styles.zipItem}>
@@ -47,9 +48,13 @@ const styles = StyleSheet.create({
            flex: 1,
            marginTop: StatusBar.currentHeight || 0,
     },
+        backdrop: {
+           width: '100%',
+           height: '100%',
+    },
         zipItem: {
-           flex: 1,
-           flexDirection: 'column',
+           flex: 1,flexDirection: 'column',
+           
            backgroundColor: "rgb(220,220,220)",
            padding: 20,
            marginVertical: 8,
