@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         zipItem: {
            flex: 1,flexDirection: 'column',
            
-           backgroundColor: "rgb(220,220,220)",
+           backgroundColor: '#ADD8E6',
            padding: 20,
            marginVertical: 8,
            marginHorizontal: 16,
@@ -76,7 +76,9 @@ const styles = StyleSheet.create({
            height: 100,
     },
         textSize: {
-           fontSize: 22,
+           fontSize: 18,
+           fontWeight: 'bold',
+           color: 'white'
     }
 })
 

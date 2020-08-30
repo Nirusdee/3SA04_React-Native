@@ -54,6 +54,7 @@ export default function Weather(props){
             Width: '100%',
             height: 150,
             paddingTop : 10
+            
     },
         zipCode: {
             fontSize : 25,
