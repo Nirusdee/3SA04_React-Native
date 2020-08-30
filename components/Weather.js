@@ -58,8 +58,11 @@ export default function Weather(props){
         zipCode: {
             fontSize : 25,
             textAlign: 'center',
+            textShadowColor: 'red',
+            textShadowOffset: {width: 1.5, height: 1.5},
+            textShadowRadius: 10,
             color: 'black',
-            paddingTop: 10,
+            paddingTop: 15,
             fontWeight: 'bold',
             paddingLeft: 30
     }

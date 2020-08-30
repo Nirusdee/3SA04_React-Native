@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
       color: 'black'
   },
   description: {
-      fontSize : 25,
+      fontSize : 27.5,
       textAlign: 'center',
       paddingTop: 10,
       paddingBottom: 30,
@@ -85,18 +85,18 @@ const styles = StyleSheet.create({
       justifyContent: 'space-around'
   },
   num: {
-      fontSize : 40, 
+      fontSize : 27, 
       color: 'black',
       fontWeight: 'bold'
   },
   unit: {
-      fontSize : 22,  
+      fontSize : 25,  
       color: 'black',  
       textAlignVertical: 'center',
-      fontWeight: 'bold'
+      
   },
   subText: {
-      fontSize : 20, 
+      fontSize : 30, 
       fontWeight: 'bold',
       color: 'black'
   },
