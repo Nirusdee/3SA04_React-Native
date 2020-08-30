@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Text, StyleSheet, ImageBackground } from 'react-native'
+import { Text, StyleSheet, ImageBackground , View } from 'react-native'
 import Forecast from './Forecast'
 
 export default function Weather(props){
     const [forecastInfo, setForecastInfo] = useState({
-        main: '-',
-        description: '-',
-        temp: 0
+        main: 'main',
+        description: 'description',
+        temp: 0,
+        humidity: 0
     }) 
     
     useEffect(() => {
@@ -18,7 +19,8 @@ export default function Weather(props){
                      setForecastInfo({
                        main: json.weather[0].main,
                        description: json.weather[0].description,
-                       temp: json.main.temp
+                       temp: json.main.temp,
+                       humidity: json.main.humidity
                });
           })
            .catch((error) => {
@@ -32,21 +34,37 @@ export default function Weather(props){
     return (
           
             <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
-               <Text>Zip Code</Text>
-               <Text>{props.zipCode}</Text>
-               <Forecast {...forecastInfo} />
+               <View style={styles.container}>
+                 <Text style={styles.zipCode}>Zip Code is <Text>{props.zipCode}</Text></Text>
+                 <Forecast {...forecastInfo}/>
+               </View>
             </ImageBackground>
           
         )
 }
        
        const styles = StyleSheet.create({
+        container: {
+            paddingTop: 26,
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            opacity: 0.6,
+            backgroundColor: 'white',
+            width: '100%',
+            height:'50%'
+    },
         backdrop: {
             flexDirection: 'column',
             alignItems: 'center',
             Width: '100%',
             height: '100%'
     },
+        zipCode: {
+            fontSize : 25,
+            textAlign: 'center',
+            color: 'black'
+    }
     
 })
 
